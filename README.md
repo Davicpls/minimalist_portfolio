@@ -5,7 +5,7 @@
 
 > new Portfolio Page
 
-### 🏠 [Homepage](https://davicpls.github.io/minimalist_portfolio/)
+### 🏠 [Homepage](https://Davicpls.github.io/minimalist_portfolio/)
 
 ## Install
 
