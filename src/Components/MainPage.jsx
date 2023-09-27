@@ -128,7 +128,7 @@ export default function MainPage() {
     }, [handleScroll]);
 
 
-    const myAge = myAgeToday;
+    const myAge = myAgeToday();
 
     const handleRedirectTo = (ref) => {
         switch (ref) {
