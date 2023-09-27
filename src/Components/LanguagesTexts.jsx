@@ -18,7 +18,7 @@ export const AboutPortuguese = ({ myAge, textColor }) => {
             Olá, meu nome é Davi Coelho e tenho {myAge} anos.
             Iniciei a programação com Python em 2022.
             Cursando a graduação de Sistemas de Informação na Universidade PUC-MG..
-            Conhecimentos sólidos em, Python, Javascript, React.js, HTML, CSS e C#.
+            Conhecimentos sólidos em Python, Javascript, React.js, HTML, CSS e C#.
             Estagiei no BTG Pactual, trabalhando com tecnologias como
         </Typography>
     );
