@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material"
 
-// TypographyEnglish.jsx
 export const AboutEnglish = ({ myAge, textColor }) => {
     return (
         <Typography sx={{ textAlign: "justify", fontFamily: 'JetBrains Mono, monospace', fontSize: "1.1rem", color: textColor, boxSizing: "border-box" }}>
@@ -13,7 +12,6 @@ export const AboutEnglish = ({ myAge, textColor }) => {
     );
 };
 
-// TypographyPortuguese.jsx
 export const AboutPortuguese = ({ myAge, textColor }) => {
     return (
         <Typography sx={{ textAlign: "justify", fontFamily: 'JetBrains Mono, monospace', fontSize: "1.1rem", color: textColor, boxSizing: "border-box" }}>

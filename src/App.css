@@ -5,5 +5,26 @@
   color: transparent;
   aspect-ratio: 1 /1;
   filter: grayscale(80%);
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+::-webkit-scrollbar {
+  width: 0!important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "JetBrains Mono,monospace";
+  -webkit-font-smoothing: antialiased ;
+  -webkit-font-feature-settings: antialiased;
+  -moz-font-feature-settings: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv11", "salt", "ss01", "ss03", "cv01", "cv02", "cv03", "cv04", "cv05", "cv06", "cv09", "cv10";
 }
 

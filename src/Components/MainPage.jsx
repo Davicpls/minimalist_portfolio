@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
     Box,
     Typography,
@@ -15,18 +15,18 @@ import {
 } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import ff from "./Images/ff.jpg";
-import { styled } from "@mui/system";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import javaScript from "./Images/javaScript.png";
+import dynamo from "./Images/dynamo.png"
+import s3 from "./Images/s3.png"
 import react from "./Images/react.png";
 import python from "./Images/python_icon.png";
 import postgre from "./Images/postgre.png";
 import docker from "./Images/docker.png";
 import azure from "./Images/Azure.png";
 import kubernetes from "./Images/kubernetes.png";
-import aws from "./Images/AWS.png";
 import CircleIcon from "@mui/icons-material/Circle";
 import EmailIcon from "@mui/icons-material/Email";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -38,165 +38,15 @@ import {
     PythonCrudEnglish,
     PythonCrudPortuguese,
 } from "./LanguagesTexts";
-
-const StyledBoxWidth = styled("div")(({ theme }) => ({
-    display: "flex",
-    flexDirection: "column",
-    gap: "3rem",
-    minWidth: "30rem",
-
-    [theme.breakpoints.down(880)]: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "3rem",
-        minWidth: "revert",
-    },
-
-    [theme.breakpoints.down(560)]: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "3rem",
-        minWidth: "revert",
-    },
-}));
-
-const StyledBoxRowToColumn = styled("div")(({ theme }) => ({
-    width: "100%",
-    maxWidth: "80rem",
-    display: "flex",
-    gap: "3rem",
-    margin: "0 auto",
-    paddingTop: "10rem",
-    paddingBottom: "10rem",
-    paddingLeft: "2rem",
-    paddingRight: "2rem",
-    position: "relative",
-    zIndex: "2",
-    background: "transparent",
-
-    [theme.breakpoints.down(880)]: {
-        width: "100%",
-        maxWidth: "80rem",
-        display: "flex",
-        flexDirection: "column",
-        gap: "3rem",
-        margin: "0 auto",
-        paddingTop: "10rem",
-        paddingBottom: "10rem",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        position: "relative",
-        zIndex: "2",
-        background: "transparent",
-    },
-
-    [theme.breakpoints.down(560)]: {
-        width: "100%",
-        maxWidth: "80rem",
-        display: "flex",
-        flexDirection: "column",
-        gap: "3rem",
-        margin: "0 auto",
-        paddingTop: "4rem",
-        paddingBottom: "4rem",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        position: "relative",
-        zIndex: "2",
-        background: "transparent",
-    },
-}));
-
-const StyledBoxRowToColumnAndWitdh = styled("div")(({ theme }) => ({
-    margin: "0 auto",
-    display: "flex",
-    flexDirection: "column",
-    gap: "2rem",
-    WebkitFontSmoothing: "antialised",
-    MozOsxFontSmoothing: "grayscale",
-    textRendering: "optimizeLegibility",
-    fontFeatureSettings: styleSettings,
-
-    [theme.breakpoints.down(880)]: {
-        width: "100%",
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: "row",
-        gap: "2rem",
-        WebkitFontSmoothing: "antialised",
-        MozOsxFontSmoothing: "grayscale",
-        textRendering: "optimizeLegibility",
-        fontFeatureSettings: styleSettings,
-    },
-
-    [theme.breakpoints.down(560)]: {
-        width: "100%",
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: "column",
-        gap: "2rem",
-        WebkitFontSmoothing: "antialised",
-        MozOsxFontSmoothing: "grayscale",
-        textRendering: "optimizeLegibility",
-        fontFeatureSettings: styleSettings,
-    },
-}));
-
-const StyledBoxColumnToRow = styled("div")(({ theme }) => ({
-    display: "flex",
-    flexDirection: "column",
-    gap: "1rem",
-    minWidth: "50%",
-    WebkitFontSmoothing: "antialised",
-    MozOsxFontSmoothing: "grayscale",
-    textRendering: "optimizeLegibility",
-    fontFeatureSettings: styleSettings,
-
-    [theme.breakpoints.down(880)]: {
-        display: "flex",
-        flexDirection: "row",
-        gap: "1rem",
-        minWidth: "50%",
-        WebkitFontSmoothing: "antialised",
-        MozOsxFontSmoothing: "grayscale",
-        textRendering: "optimizeLegibility",
-        fontFeatureSettings: styleSettings,
-    },
-
-    [theme.breakpoints.down(560)]: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-        minWidth: "50%",
-        WebkitFontSmoothing: "antialised",
-        MozOsxFontSmoothing: "grayscale",
-        textRendering: "optimizeLegibility",
-        fontFeatureSettings: styleSettings,
-    },
-}));
-
-const styleFeatures = [
-    "cv11",
-    "salt",
-    "ss01",
-    "ss03",
-    "cv01",
-    "cv02",
-    "cv03",
-    "cv04",
-    "cv05",
-    "cv06",
-    "cv09",
-    "cv10",
-];
-
-const styleSettings = styleFeatures.map((feature) => `"${feature}"`).join(", ");
+import { determinarAltura, myAgeToday } from "./Utilities";
+import { StyledBox, StyledBoxWidth, StyledBoxRowToColumn, StyledBoxRowToColumnAndWidth, StyledBoxColumnToRow, StyledBoxImage } from "./CustomComponents";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 export default function MainPage() {
+
     const [openSnack, setOpenSnack] = useState(false);
 
     const handleClickSnack = () => {
@@ -215,7 +65,9 @@ export default function MainPage() {
             await navigator.clipboard.writeText("davic2stl@outlook.com");
 
             handleClickSnack();
-        } catch (err) { }
+        } catch (err) {
+            console.log(err)
+        }
     };
     const yearData = new Date();
     const actualYear = yearData.getFullYear();
@@ -243,87 +95,40 @@ export default function MainPage() {
         }
     };
 
-    const StyledBox = styled("div")(({ theme }) => ({
-        width: "100%",
-        height: "100%",
-        minWidth: "390px",
-        backgroundColor: switchTheme,
-        boxSizing: "border-box",
-
-        [theme.breakpoints.down(880)]: {
-            width: "100%",
-            height: "100%",
-            minWidth: "390px",
-            backgroundColor: switchTheme,
-        },
-
-        [theme.breakpoints.down(560)]: {
-            width: "100%",
-            height: "100%",
-            minWidth: "390px",
-            backgroundColor: switchTheme,
-        },
-    }));
 
     const [height, setHeight] = useState(determinarAltura(window.innerWidth));
 
+    const handleResize = useCallback(() => {
+        setHeight(determinarAltura(window.innerWidth));
+    }, []);
+
     useEffect(() => {
-        const handleResize = () => {
-            setHeight(determinarAltura(window.innerWidth));
-        };
 
         window.addEventListener("resize", handleResize);
 
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    }, [handleResize]);
 
-    function determinarAltura(larguraAtual) {
-        const larguraInicial = 1039;
-        const alturaInicial = 2457.25;
-
-        const minLargura = 320;
-        const alturaFinal = 5025.44;
-
-        if (larguraAtual > larguraInicial) {
-            return alturaInicial;
-        }
-
-        if (larguraAtual <= minLargura) {
-            return alturaFinal;
-        }
-
-        const slope = (alturaFinal - alturaInicial) / (minLargura - larguraInicial);
-        return slope * (larguraAtual - larguraInicial) + alturaInicial;
-    }
 
     const [translateY, setTranslateY] = useState(0);
 
+    const handleScroll = useCallback(() => {
+        setTranslateY(window.scrollY);
+    }, []);
+
     useEffect(() => {
-        const handleScroll = () => {
-            setTranslateY(window.scrollY);
-        };
 
         window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [handleScroll]);
 
-    const birthDate = new Date("1999/08/16");
 
-    const today = new Date();
-
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const month = today.getMonth() - birthDate.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-
-    const myAge = age;
+    const myAge = myAgeToday;
 
     const handleRedirectTo = (ref) => {
         switch (ref) {
@@ -349,17 +154,16 @@ export default function MainPage() {
             sx={{
                 width: "100%",
                 height: "100%",
-                minWidth: "390px",
-                boxSizing: "border-box",
+                minWidth: "390px"
             }}
         >
-            <StyledBox>
+            <StyledBox theme={theme} switchTheme={switchTheme}>
                 <Box
                     sx={{
                         width: "100%",
                         height: "100%",
                         minWidth: "390px",
-                        boxSizing: "border-box",
+
                         fontSize: "13px",
                     }}
                 >
@@ -370,7 +174,7 @@ export default function MainPage() {
                             height: `${height}px`,
                             m: "0",
                             p: "0",
-                            boxSizing: "border-box",
+
                         }}
                     >
                         <Box
@@ -392,7 +196,7 @@ export default function MainPage() {
                                     minWidth: "25.625rem",
                                 }}
                             >
-                                <StyledBoxRowToColumn>
+                                <StyledBoxRowToColumn theme={theme}>
                                     <Box
                                         sx={{
                                             display: "flex",
@@ -401,31 +205,11 @@ export default function MainPage() {
                                             minWidth: "21.25rem",
                                         }}
                                     >
-                                        <StyledBoxRowToColumnAndWitdh
-                                            component="body"
-                                            sx={{
-                                                margin: "0 auto",
-                                                display: "flex",
-                                                flexDirection: "column",
-                                                gap: "2rem",
-                                                WebkitFontSmoothing: "antialised",
-                                                MozOsxFontSmoothing: "grayscale",
-                                                textRendering: "optimizeLegibility",
-                                                fontFeatureSettings: styleSettings,
-                                            }}
-                                        >
-                                            <StyledBoxColumnToRow>
-                                                <Box
-                                                    sx={{
-                                                        alignSelf: "center",
-                                                        maxWidth: "21.25rem",
-                                                        maxHeight: "21.25rem",
-                                                        minWidth: "20.625rem",
-                                                        minHeight: "20.625rem",
-                                                    }}
-                                                >
-                                                    <img src={ff} className="myPhoto" alt="my_photo" />
-                                                </Box>
+                                        <StyledBoxRowToColumnAndWidth theme={theme}>
+                                            <StyledBoxColumnToRow theme={theme}>
+                                                <StyledBoxImage theme={theme}>
+                                                    <img decoding="async" data-ning src={ff} className="myPhoto" alt="my_photo" />
+                                                </StyledBoxImage>
                                                 <Typography
                                                     sx={{
                                                         display: "flex",
@@ -516,9 +300,9 @@ export default function MainPage() {
                                                     </List>
                                                 </Typography>
                                             </StyledBoxColumnToRow>
-                                        </StyledBoxRowToColumnAndWitdh>
+                                        </StyledBoxRowToColumnAndWidth>
                                     </Box>
-                                    <StyledBoxWidth>
+                                    <StyledBoxWidth theme={theme}>
                                         <Box
                                             sx={{
                                                 color: textColor,
@@ -597,9 +381,8 @@ export default function MainPage() {
                                             <ListItem
                                                 sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                                                 secondaryAction={
-                                                    <Box sx={{ display: "flex", gap: "1rem" }}>
-                                                        <img alt="javascript" src={javaScript} />{" "}
-                                                        <img alt="javascript" src={react} />
+                                                    <Box >
+                                                        <img decoding="async" alt="javascript" src={javaScript} />{" "}
                                                     </Box>
                                                 }
                                             >
@@ -609,7 +392,7 @@ export default function MainPage() {
                                                     />
                                                 </ListItemIcon>
                                                 <ListItemText
-                                                    primary="Javascript, React.js,"
+                                                    primary="Javascript"
                                                     sx={{
                                                         color: textColor,
                                                         "& .MuiListItemText-primary": {
@@ -622,8 +405,8 @@ export default function MainPage() {
                                             <ListItem
                                                 sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                                                 secondaryAction={
-                                                    <Box sx={{ display: "flex", gap: "1rem" }}>
-                                                        <img alt="javascript" src={python} />
+                                                    <Box >
+                                                        <img decoding="async" alt="react" src={react} />
                                                     </Box>
                                                 }
                                             >
@@ -633,7 +416,7 @@ export default function MainPage() {
                                                     />
                                                 </ListItemIcon>
                                                 <ListItemText
-                                                    primary="Python, FastAPI,"
+                                                    primary="React.js"
                                                     sx={{
                                                         color: textColor,
                                                         "& .MuiListItemText-primary": {
@@ -646,9 +429,8 @@ export default function MainPage() {
                                             <ListItem
                                                 sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                                                 secondaryAction={
-                                                    <Box sx={{ display: "flex", gap: "1rem" }}>
-                                                        <img alt="javascript" src={postgre} />{" "}
-                                                        <img alt="javascript" src={docker} />
+                                                    <Box>
+                                                        <img decoding="async" alt="python" src={python} />
                                                     </Box>
                                                 }
                                             >
@@ -658,7 +440,7 @@ export default function MainPage() {
                                                     />
                                                 </ListItemIcon>
                                                 <ListItemText
-                                                    primary="PostgreSQL, Docker,"
+                                                    primary="Python - FastAPI"
                                                     sx={{
                                                         color: textColor,
                                                         "& .MuiListItemText-primary": {
@@ -671,9 +453,9 @@ export default function MainPage() {
                                             <ListItem
                                                 sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                                                 secondaryAction={
-                                                    <Box sx={{ display: "flex", gap: "1rem" }}>
-                                                        <img alt="javascript" src={azure} />{" "}
-                                                        <img alt="javascript" src={kubernetes} />
+                                                    <Box>
+                                                        <img  decoding="async" alt="postgre" src={postgre} />{" "}
+
                                                     </Box>
                                                 }
                                             >
@@ -683,7 +465,7 @@ export default function MainPage() {
                                                     />
                                                 </ListItemIcon>
                                                 <ListItemText
-                                                    primary="Azure Devops, Kubernetes,"
+                                                    primary="PostgreSQL"
                                                     sx={{
                                                         color: textColor,
                                                         "& .MuiListItemText-primary": {
@@ -696,8 +478,8 @@ export default function MainPage() {
                                             <ListItem
                                                 sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                                                 secondaryAction={
-                                                    <Box sx={{ display: "flex", gap: "1rem" }}>
-                                                        <img alt="javascript" src={aws} />
+                                                    <Box>
+                                                        <img decoding="async" alt="docker" src={docker} />
                                                     </Box>
                                                 }
                                             >
@@ -707,7 +489,103 @@ export default function MainPage() {
                                                     />
                                                 </ListItemIcon>
                                                 <ListItemText
-                                                    primary="AWS services - S3, CloudFormation, DynamoDB."
+                                                    primary="Docker"
+                                                    sx={{
+                                                        color: textColor,
+                                                        "& .MuiListItemText-primary": {
+                                                            fontFamily: "JetBrains Mono, monospace",
+                                                            fontSize: "1.1rem",
+                                                        },
+                                                    }}
+                                                />
+                                            </ListItem>
+                                            <ListItem
+                                                sx={{ p: "0", m: "0", boxSizing: "border-box" }}
+                                                secondaryAction={
+                                                    <Box >
+                                                        <img decoding="async" alt="kubernetes" src={kubernetes} />
+                                                    </Box>
+                                                }
+                                            >
+                                                <ListItemIcon sx={{ minWidth: "20px" }}>
+                                                    <CircleIcon
+                                                        sx={{ fontSize: "7px", color: textColor }}
+                                                    />
+                                                </ListItemIcon>
+                                                <ListItemText
+                                                    primary="Kubernetes"
+                                                    sx={{
+                                                        color: textColor,
+                                                        "& .MuiListItemText-primary": {
+                                                            fontFamily: "JetBrains Mono, monospace",
+                                                            fontSize: "1.1rem",
+                                                        },
+                                                    }}
+                                                />
+                                            </ListItem>
+                                            <ListItem
+                                                sx={{ p: "0", m: "0", boxSizing: "border-box" }}
+                                                secondaryAction={
+                                                    <Box>
+                                                        <img decoding="async" alt="azure" src={azure} />{" "}
+                                                    </Box>
+                                                }
+                                            >
+                                                <ListItemIcon sx={{ minWidth: "20px" }}>
+                                                    <CircleIcon
+                                                        sx={{ fontSize: "7px", color: textColor }}
+                                                    />
+                                                </ListItemIcon>
+                                                <ListItemText
+                                                    primary="Azure Devops"
+                                                    sx={{
+                                                        color: textColor,
+                                                        "& .MuiListItemText-primary": {
+                                                            fontFamily: "JetBrains Mono, monospace",
+                                                            fontSize: "1.1rem",
+                                                        },
+                                                    }}
+                                                />
+                                            </ListItem>
+                                            <ListItem
+                                                sx={{ p: "0", m: "0", boxSizing: "border-box" }}
+                                                secondaryAction={
+                                                    <Box>
+                                                        <img decoding="async" alt="dynamo" src={dynamo} />
+                                                    </Box>
+                                                }
+                                            >
+                                                <ListItemIcon sx={{ minWidth: "20px" }}>
+                                                    <CircleIcon
+                                                        sx={{ fontSize: "7px", color: textColor }}
+                                                    />
+                                                </ListItemIcon>
+                                                <ListItemText
+                                                    primary='AWS DynamoDB'
+                                                    sx={{
+                                                        color: textColor,
+                                                        "& .MuiListItemText-primary": {
+                                                            fontFamily: "JetBrains Mono, monospace",
+                                                            fontSize: "1.1rem",
+                                                        },
+                                                    }}
+                                                />
+                                            </ListItem>
+                                            <ListItem
+                                                sx={{ p: "0", m: "0", boxSizing: "border-box" }}
+                                                secondaryAction={
+                                                    <Box>
+                                                        <img decoding="async" alt="s3" src={s3} />
+                                                    </Box>
+                                                }
+                                            >
+                                                <ListItemIcon sx={{ minWidth: "20px" }}>
+                                                    <CircleIcon
+                                                        sx={{ fontSize: "7px", color: textColor }}
+                                                    />
+                                                </ListItemIcon>
+                                                <ListItemText
+                                                    primary='AWS S3'
                                                     sx={{
                                                         color: textColor,
                                                         "& .MuiListItemText-primary": {
