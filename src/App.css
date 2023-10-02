@@ -20,7 +20,7 @@
 }
 
 * {
-  font-family: "JetBrains Mono,monospace";
+  font-family: "JetBrains Mono", monospace;
   -webkit-font-smoothing: antialiased ;
   -webkit-font-feature-settings: antialiased;
   -moz-font-feature-settings: grayscale;

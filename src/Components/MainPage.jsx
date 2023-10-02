@@ -37,6 +37,8 @@ import {
     AboutEnglish,
     PythonCrudEnglish,
     PythonCrudPortuguese,
+    ChromeTimerExtensionPortuguese,
+    ChromeTimerExtensionEnglish,
 } from "./LanguagesTexts";
 import { determinarAltura, myAgeToday } from "./Utilities";
 import { StyledBox, StyledBoxWidth, StyledBoxRowToColumn, StyledBoxRowToColumnAndWidth, StyledBoxColumnToRow, StyledBoxImage } from "./CustomComponents";
@@ -134,6 +136,9 @@ export default function MainPage() {
         switch (ref) {
             case "crud_python":
                 window.open("https://github.com/Davicpls/crud_python", "_blank");
+                break;
+            case "chrome_extension":
+                window.open("https://github.com/Davicpls/chrome_extension", "_blank");
                 break;
             case "instagram":
                 window.open("https://www.instagram.com/davicpls/", "_blank");
@@ -611,6 +616,17 @@ export default function MainPage() {
                                             )}
                                         </Typography>
 
+                                        <Typography
+                                            sx={{
+                                                fontFamily: "JetBrains Mono, monospace",
+                                                fontSize: "1.6rem",
+                                                color: "#9FCC2E",
+                                                alignSelf: "start",
+                                            }}
+                                        >
+                                            Python CRUD
+                                        </Typography>
+
                                         {switchLanguage === "en" ? (
                                             <PythonCrudEnglish textColor={textColor}>
                                                 <Button
@@ -618,8 +634,11 @@ export default function MainPage() {
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
                                                         color: "#9FCC2E",
+                                                        mt: "1.2rem",
+
                                                     }}
                                                     onClick={() => handleRedirectTo("crud_python")}
+                                                    variant="contained"
                                                 >
                                                     Project Link
                                                 </Button>
@@ -631,12 +650,56 @@ export default function MainPage() {
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
                                                         color: "#9FCC2E",
+                                                        mt: "1.2rem",
                                                     }}
                                                     onClick={() => handleRedirectTo("crud_python")}
                                                 >
                                                     Project Link
                                                 </Button>
                                             </PythonCrudPortuguese>
+                                        )}
+                                        
+                                        <Typography
+                                            sx={{
+                                                fontFamily: "JetBrains Mono, monospace",
+                                                fontSize: "1.6rem",
+                                                color: "#9FCC2E",
+                                                alignSelf: "start",
+                                            }}
+                                        >
+                                            Chrome Timer Extension
+                                        </Typography>
+
+                                        {switchLanguage === "en" ? (
+                                            <ChromeTimerExtensionEnglish textColor={textColor}>
+                                                <Button
+                                                    sx={{
+                                                        fontFamily: "JetBrains Mono, monospace",
+                                                        fontSize: "1.2rem",
+                                                        color: "#9FCC2E",
+                                                        mt: "1.2rem",
+
+                                                    }}
+                                                    onClick={() => handleRedirectTo("chrome_extension")}
+                                                    variant="contained"
+                                                >
+                                                    Project Link
+                                                </Button>
+                                            </ChromeTimerExtensionEnglish>
+                                        ) : (
+                                            <ChromeTimerExtensionPortuguese textColor={textColor}>
+                                                <Button
+                                                    sx={{
+                                                        fontFamily: "JetBrains Mono, monospace",
+                                                        fontSize: "1.2rem",
+                                                        color: "#9FCC2E",
+                                                        mt: "1.2rem",
+                                                    }}
+                                                    onClick={() => handleRedirectTo("chrome_extension")}
+                                                >
+                                                    Project Link
+                                                </Button>
+                                            </ChromeTimerExtensionPortuguese>
                                         )}
                                         <Divider sx={{ backgroundColor: textColor }}></Divider>
                                         {switchLanguage === 'en' ? <Typography
@@ -676,7 +739,6 @@ export default function MainPage() {
                     severity="success"
                     sx={{
                         width: "100%",
-                        fontFamily: "JetBrains Mono, monospace",
                         fontSize: "16px",
                     }}
                 >
