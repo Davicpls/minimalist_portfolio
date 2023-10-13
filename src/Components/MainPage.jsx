@@ -31,6 +31,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import EmailIcon from "@mui/icons-material/Email";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import gitgif from "./Images/mona-loading-dark.gif";
 import { useTheme } from "@mui/material/styles";
 import {
   AboutPortuguese,
@@ -251,6 +252,7 @@ export default function MainPage() {
                                     ml: "2vmin",
                                     "& .MuiListItemText-primary": {
                                       fontFamily: "JetBrains Mono, monospace",
+                                      letterSpacing: "0.10em",
                                     },
                                   }}
                                 />
@@ -271,6 +273,7 @@ export default function MainPage() {
                                     ml: "2vmin",
                                     "& .MuiListItemText-primary": {
                                       fontFamily: "JetBrains Mono, monospace",
+                                      letterSpacing: "0.10em",
                                     },
                                   }}
                                 />
@@ -291,6 +294,7 @@ export default function MainPage() {
                                     ml: "2vmin",
                                     "& .MuiListItemText-primary": {
                                       fontFamily: "JetBrains Mono, monospace",
+                                      letterSpacing: "0.10em",
                                     },
                                   }}
                                 />
@@ -311,6 +315,7 @@ export default function MainPage() {
                                     ml: "2vmin",
                                     "& .MuiListItemText-primary": {
                                       fontFamily: "JetBrains Mono, monospace",
+                                      letterSpacing: "0.10em",
                                     },
                                   }}
                                 />
@@ -338,6 +343,7 @@ export default function MainPage() {
                           color: textColor,
                           fontFamily: "JetBrains Mono, monospace",
                           fontSize: "35px",
+                          letterSpacing: "0.10em",
                         }}
                       >
                         EN
@@ -348,6 +354,7 @@ export default function MainPage() {
                           color: textColor,
                           fontFamily: "JetBrains Mono, monospace",
                           fontSize: "35px",
+                          letterSpacing: "0.10em",
                         }}
                       >
                         PT
@@ -376,6 +383,7 @@ export default function MainPage() {
                         fontSize: "2rem",
                         color: textColor,
                         alignSelf: "center",
+                        letterSpacing: "0.10em",
                       }}
                     >
                       Portfolio
@@ -386,6 +394,7 @@ export default function MainPage() {
                         fontSize: "2rem",
                         color: textColor,
                         alignSelf: "start",
+                        letterSpacing: "0.10em",
                       }}
                     >
                       {switchLanguage === "en" ? <> About </> : <> Sobre </>}
@@ -421,6 +430,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -445,6 +455,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -469,6 +480,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -493,6 +505,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -517,6 +530,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -545,6 +559,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -569,6 +584,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -593,6 +609,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -617,6 +634,7 @@ export default function MainPage() {
                             "& .MuiListItemText-primary": {
                               fontFamily: "JetBrains Mono, monospace",
                               fontSize: "1.1rem",
+                              letterSpacing: "0.10em",
                             },
                           }}
                         />
@@ -625,9 +643,10 @@ export default function MainPage() {
                     <Typography
                       sx={{
                         fontFamily: "JetBrains Mono, monospace",
-                        fontSize: "2rem",
+                        fontSize: "1.8rem",
                         color: textColor,
                         alignSelf: "start",
+                        letterSpacing: "0.10em",
                       }}
                     >
                       {switchLanguage === "en" ? (
@@ -660,7 +679,8 @@ export default function MainPage() {
                             backgroundColor: "transparent",
                             color: textColor,
                             mt: "1.4rem",
-                            p: "0"
+                            p: "0",
+                            letterSpacing: "0.10em",
                           }}
                           onClick={() =>
                             handleRedirectTo("minimalist_portfolio")
@@ -678,12 +698,12 @@ export default function MainPage() {
                             backgroundColor: "transparent",
                             color: textColor,
                             mt: "1.4rem",
-                            p: "0"
+                            p: "0",
+                            letterSpacing: "0.10em",
                           }}
                           onClick={() =>
                             handleRedirectTo("minimalist_portfolio")
                           }
-  
                         >
                           Project Link
                         </Button>
@@ -712,10 +732,10 @@ export default function MainPage() {
                             fontSize: "1.2rem",
                             color: textColor,
                             mt: "1.4rem",
-                            p: "0"
+                            p: "0",
+                            letterSpacing: "0.10em",
                           }}
                           onClick={() => handleRedirectTo("crud_python")}
-                          
                         >
                           Project Link
                         </Button>
@@ -728,7 +748,8 @@ export default function MainPage() {
                             fontSize: "1.2rem",
                             color: textColor,
                             mt: "1.4rem",
-                            p: "0"
+                            p: "0",
+                            letterSpacing: "0.10em",
                           }}
                           onClick={() => handleRedirectTo("crud_python")}
                         >
@@ -760,10 +781,10 @@ export default function MainPage() {
                             fontSize: "1.2rem",
                             color: textColor,
                             mt: "1.4rem",
-                            p: "0"
+                            p: "0",
+                            letterSpacing: "0.10em",
                           }}
                           onClick={() => handleRedirectTo("chrome_extension")}
-                          
                         >
                           Project Link
                         </Button>
@@ -776,7 +797,8 @@ export default function MainPage() {
                             fontSize: "1.2rem",
                             color: textColor,
                             mt: "1.4rem",
-                            p: "0"
+                            p: "0",
+                            letterSpacing: "0.10em",
                           }}
                           onClick={() => handleRedirectTo("chrome_extension")}
                         >
@@ -792,24 +814,39 @@ export default function MainPage() {
                           fontSize: "1rem",
                           color: textColor,
                           alignSelf: "start",
-                          letterSpacing: "0.10em"
+                          letterSpacing: "0.10em",
                         }}
                       >
                         © {actualYear} Davi Coelho — All rights reserved. v1.0
                       </Typography>
+                      
                     ) : (
-                      <Typography
-                        sx={{
-                          fontFamily: "JetBrains Mono, monospace",
-                          fontSize: "1rem",
-                          color: textColor,
-                          alignSelf: "start",
-                          letterSpacing: "0.10em"
-                        }}
-                      >
-                        © {actualYear} Davi Coelho — Todos os direitos
-                        reservados. v1.0
-                      </Typography>
+                      <Box sx={{position: "relative"}}>
+                        <Typography
+                          sx={{
+                            fontFamily: "JetBrains Mono, monospace",
+                            fontSize: "1rem",
+                            color: textColor,
+                            alignSelf: "start",
+                            letterSpacing: "0.10em",
+                          }}
+                        >
+                          © {actualYear} Davi Coelho — Todos os direitos
+                          reservados. v1.1
+                        </Typography>
+                        <Box className="gitGif">
+                        <img
+                          
+                          decoding="async"
+                          data-ning
+                          src={gitgif}
+                          alt="octoGitGif"
+                        />
+                        <Box className="texto"> {switchLanguage === "en" ?<>Hi!</> : <>Olá!</>}</Box>
+                        <Box className="texto tdbem">{switchLanguage === "en" ?<>Everything is fine?</> : <>Tudo bem?</>}</Box>
+                        </Box>
+
+                      </Box>
                     )}
                   </StyledBoxWidth>
                 </StyledBoxRowToColumn>

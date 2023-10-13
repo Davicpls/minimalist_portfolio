@@ -2,7 +2,7 @@ import { Typography } from "@mui/material"
 
 export const AboutEnglish = ({ myAge, textColor }) => {
     return (
-        <Typography sx={{ textAlign: "justify", fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, boxSizing: "border-box", p: "1rem" }}>
+        <Typography sx={{ textAlign: "justify", fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, boxSizing: "border-box", p: "1rem", letterSpacing: "0.10em" }}>
             My name is Davi Coelho and I am {myAge} years old.
             Started programming with Python in 2022.
             Pursuing Information Systems degree at PUC-MG University.
@@ -14,7 +14,7 @@ export const AboutEnglish = ({ myAge, textColor }) => {
 
 export const AboutPortuguese = ({ myAge, textColor }) => {
     return (
-        <Typography sx={{ textAlign: "justify", fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, boxSizing: "border-box", p: "0.6rem", letterSpacing: "0.10em" }}>
+        <Typography sx={{ textAlign: "justify", fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, boxSizing: "border-box", p: "1rem", letterSpacing: "0.10em" }}>
             Olá, meu nome é Davi Coelho e tenho {myAge} anos.
             Iniciei a programação com Python em 2022.
             Cursando a graduação de Sistemas de Informação na Universidade PUC-MG..
