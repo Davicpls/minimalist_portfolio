@@ -808,20 +808,31 @@ export default function MainPage() {
                     )}
                     <Divider sx={{ backgroundColor: textColor }}></Divider>
                     {switchLanguage === "en" ? (
-                      <Typography
-                        sx={{
-                          fontFamily: "JetBrains Mono, monospace",
-                          fontSize: "1rem",
-                          color: textColor,
-                          alignSelf: "start",
-                          letterSpacing: "0.10em",
-                        }}
-                      >
-                        © {actualYear} Davi Coelho — All rights reserved. v1.0
-                      </Typography>
-                      
+                      <Box sx={{ position: "relative" }}>
+                        <Typography
+                          sx={{
+                            fontFamily: "JetBrains Mono, monospace",
+                            fontSize: "1rem",
+                            color: textColor,
+                            alignSelf: "start",
+                            letterSpacing: "0.10em",
+                          }}
+                        >
+                          © {actualYear} Davi Coelho — All rights reserved. v1.0
+                        </Typography>
+                        <Box className="gitGif">
+                          <img
+                            decoding="async"
+                            data-ning
+                            src={gitgif}
+                            alt="octoGitGif"
+                          />
+                          <Box className="texto"> Hi!</Box>
+                          <Box className="texto tdbem">Everything is fine?</Box>
+                        </Box>
+                      </Box>
                     ) : (
-                      <Box sx={{position: "relative"}}>
+                      <Box sx={{ position: "relative" }}>
                         <Typography
                           sx={{
                             fontFamily: "JetBrains Mono, monospace",
@@ -835,17 +846,15 @@ export default function MainPage() {
                           reservados. v1.1
                         </Typography>
                         <Box className="gitGif">
-                        <img
-                          
-                          decoding="async"
-                          data-ning
-                          src={gitgif}
-                          alt="octoGitGif"
-                        />
-                        <Box className="texto"> {switchLanguage === "en" ?<>Hi!</> : <>Olá!</>}</Box>
-                        <Box className="texto tdbem">{switchLanguage === "en" ?<>Everything is fine?</> : <>Tudo bem?</>}</Box>
+                          <img
+                            decoding="async"
+                            data-ning
+                            src={gitgif}
+                            alt="octoGitGif"
+                          />
+                          <Box className="texto"> Olá!</Box>
+                          <Box className="texto tdbem">Tudo bem?</Box>
                         </Box>
-
                       </Box>
                     )}
                   </StyledBoxWidth>

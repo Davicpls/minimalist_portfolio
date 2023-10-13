@@ -35,13 +35,23 @@
 }
 
 .texto {
-  left: 75%;
+  left: 90%;
   animation: slideInOla 18s infinite;
 }
 
 .texto.tdbem {
-  left: 70%;
+  left: 87%;
   animation: slideInTdBem 18s infinite; 
+}
+
+@media (max-width: 560px) {
+  .texto {
+    left: 75%; 
+  }
+
+  .texto.tdbem {
+    left: 70%; 
+  }
 }
 
 @keyframes slideInOla {
