@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/minimalist_portfolio/static/css/main.48d1d5db.css",
-    "main.js": "/minimalist_portfolio/static/js/main.00ada4f7.js",
+    "main.css": "/minimalist_portfolio/static/css/main.5a557b55.css",
+    "main.js": "/minimalist_portfolio/static/js/main.24300eb3.js",
     "static/js/787.00e01591.chunk.js": "/minimalist_portfolio/static/js/787.00e01591.chunk.js",
     "static/media/ff.jpg": "/minimalist_portfolio/static/media/ff.1d4bbf4c42f023097f94.jpg",
     "index.html": "/minimalist_portfolio/index.html",
-    "main.48d1d5db.css.map": "/minimalist_portfolio/static/css/main.48d1d5db.css.map",
-    "main.00ada4f7.js.map": "/minimalist_portfolio/static/js/main.00ada4f7.js.map",
+    "main.5a557b55.css.map": "/minimalist_portfolio/static/css/main.5a557b55.css.map",
+    "main.24300eb3.js.map": "/minimalist_portfolio/static/js/main.24300eb3.js.map",
     "787.00e01591.chunk.js.map": "/minimalist_portfolio/static/js/787.00e01591.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.48d1d5db.css",
-    "static/js/main.00ada4f7.js"
+    "static/css/main.5a557b55.css",
+    "static/js/main.24300eb3.js"
   ]
 }
