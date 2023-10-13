@@ -39,6 +39,8 @@ import {
     PythonCrudPortuguese,
     ChromeTimerExtensionPortuguese,
     ChromeTimerExtensionEnglish,
+    MinimalistPortfolioEnglish,
+    MinimalistPortfolioPortuguese
 } from "./LanguagesTexts";
 import { determinarAltura, myAgeToday } from "./Utilities";
 import { StyledBox, StyledBoxWidth, StyledBoxRowToColumn, StyledBoxRowToColumnAndWidth, StyledBoxColumnToRow, StyledBoxImage } from "./CustomComponents";
@@ -134,6 +136,9 @@ export default function MainPage() {
 
     const handleRedirectTo = (ref) => {
         switch (ref) {
+            case "minimalist_portfolio":
+                window.open("https://github.com/Davicpls/minimalist_portfolio", "_blank");
+                break;
             case "crud_python":
                 window.open("https://github.com/Davicpls/crud_python", "_blank");
                 break;
@@ -459,7 +464,7 @@ export default function MainPage() {
                                                 sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                                                 secondaryAction={
                                                     <Box>
-                                                        <img  decoding="async" alt="postgre" src={postgre} />{" "}
+                                                        <img decoding="async" alt="postgre" src={postgre} />{" "}
 
                                                     </Box>
                                                 }
@@ -626,6 +631,38 @@ export default function MainPage() {
                                         >
                                             Python CRUD
                                         </Typography>
+                                        {switchLanguage === "en" ? (
+                                            <MinimalistPortfolioEnglish>
+                                                <Button
+                                                    sx={{
+                                                        fontFamily: "JetBrains Mono, monospace",
+                                                        fontSize: "1.2rem",
+                                                        color: "#9FCC2E",
+                                                        mt: "1.2rem",
+
+                                                    }}
+                                                    onClick={() => handleRedirectTo("minimalist_portfolio")}
+                                                    variant="contained"
+                                                >
+                                                    Project Link
+                                                </Button>
+                                            </MinimalistPortfolioEnglish>
+                                        ) : <MinimalistPortfolioPortuguese>
+                                            <Button
+                                                sx={{
+                                                    fontFamily: "JetBrains Mono, monospace",
+                                                    fontSize: "1.2rem",
+                                                    color: "#9FCC2E",
+                                                    mt: "1.2rem",
+
+                                                }}
+                                                onClick={() => handleRedirectTo("minimalist_portfolio")}
+                                                variant="contained"
+                                            >
+                                                Project Link
+                                            </Button>
+                                        </MinimalistPortfolioPortuguese>
+                                        }
 
                                         {switchLanguage === "en" ? (
                                             <PythonCrudEnglish textColor={textColor}>
@@ -658,7 +695,7 @@ export default function MainPage() {
                                                 </Button>
                                             </PythonCrudPortuguese>
                                         )}
-                                        
+
                                         <Typography
                                             sx={{
                                                 fontFamily: "JetBrains Mono, monospace",

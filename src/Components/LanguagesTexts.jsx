@@ -27,8 +27,9 @@ export const AboutPortuguese = ({ myAge, textColor }) => {
 export const PythonCrudEnglish = ({ textColor, children }) => {
     return (
         <Typography sx={{ fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, p: "0.6rem" }}>
-            Currently i'm doing a stock management 'CRUD' with Python and FastAPI for backend, frontend with
-            React.js and for database, i'm using PostgreSQL.
+            Python Crud - A stock management project with a backend in Python and FastAPI, where the user can
+            insert items with their respective prices, add balance to the account, purchase, edit, and delete items, as well as view
+            all of this in tables.
             {children}
         </Typography>
     )
@@ -38,8 +39,9 @@ export const PythonCrudEnglish = ({ textColor, children }) => {
 export const PythonCrudPortuguese = ({ textColor, children }) => {
     return (
         <Typography sx={{ fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, p: "0.6rem" }}>
-            Atualmente, estou desenvolvendo um 'CRUD' para gestão de estoque com Python e FastAPI para o backend,
-            React.js para o frontend e, para o banco de dados, estou usando PostgreSQL.
+            Python Crud - Um projeto de gerenciamento de estoque com backend em Python e FastAPI, onde o usuário pode
+            inserir items com seus respectivos preços, adicionar saldo na conta, comprar, editar e deletar items, além de visualizar
+            isso tudo em tabelas.
             {children}
         </Typography>
     )
@@ -48,8 +50,8 @@ export const PythonCrudPortuguese = ({ textColor, children }) => {
 export const ChromeTimerExtensionEnglish = ({ textColor, children }) => {
     return (
         <Typography sx={{ fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, p: "0.6rem" }}>
-            Introducing the Customizable Focus Timer - a Google Chrome extension designed for those who crave flexibility in their focus sessions. 
-            Inspired by the Pomodoro Technique, the extension takes it a step further by allowing you to tailor your work and break durations to your unique needs. 
+            Customizable Focus Timer - a Google Chrome extension designed for those who crave flexibility in their focus sessions.
+            Inspired by the Pomodoro Technique, the extension takes it a step further by allowing you to tailor your work and break durations to your unique needs.
             {children}
         </Typography>
     )
@@ -59,9 +61,26 @@ export const ChromeTimerExtensionEnglish = ({ textColor, children }) => {
 export const ChromeTimerExtensionPortuguese = ({ textColor, children }) => {
     return (
         <Typography sx={{ fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, p: "0.6rem" }}>
-            Apresentamos o Temporizador de Foco Personalizável - uma extensão do Google Chrome projetada para quem deseja flexibilidade em suas sessões de foco. 
-            Inspirada na Técnica Pomodoro, ela permite que você ajuste as durações de trabalho, pausa e ciclos de acordo com suas necessidades únicas. 
+            Temporizador de Foco Personalizável - uma extensão do Google Chrome projetada para quem deseja flexibilidade em suas sessões de foco.
+            Inspirada na Técnica Pomodoro, ela permite que você ajuste as durações de trabalho, pausa e ciclos de acordo com suas necessidades únicas.
+            {children}
+        </Typography>
+    )
+}
 
+export const MinimalistPortfolioPortuguese = ({ textColor, children }) => {
+    return (
+        <Typography sx={{ fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, p: "0.6rem" }}>
+            Esta Página - Página Portfolio onde divulgo minhas habilidades e projetos pessoais.
+            {children}
+        </Typography>
+    )
+}
+
+export const MinimalistPortfolioEnglish = ({ textColor, children }) => {
+    return (
+        <Typography sx={{ fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, p: "0.6rem" }}>
+            This Page - Portfolio page where I showcase my skills and personal projects.
             {children}
         </Typography>
     )
