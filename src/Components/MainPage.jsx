@@ -625,11 +625,11 @@ export default function MainPage() {
                                             sx={{
                                                 fontFamily: "JetBrains Mono, monospace",
                                                 fontSize: "1.6rem",
-                                                color: "#9FCC2E",
+                                                color: textColor,
                                                 alignSelf: "start",
                                             }}
                                         >
-                                            Python CRUD
+                                            Essa página
                                         </Typography>
                                         {switchLanguage === "en" ? (
                                             <MinimalistPortfolioEnglish>
@@ -637,7 +637,7 @@ export default function MainPage() {
                                                     sx={{
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
-                                                        color: "#9FCC2E",
+                                                        color: textColor,
                                                         mt: "1.2rem",
 
                                                     }}
@@ -652,7 +652,7 @@ export default function MainPage() {
                                                 sx={{
                                                     fontFamily: "JetBrains Mono, monospace",
                                                     fontSize: "1.2rem",
-                                                    color: "#9FCC2E",
+                                                    color: textColor,
                                                     mt: "1.2rem",
 
                                                 }}
@@ -663,6 +663,16 @@ export default function MainPage() {
                                             </Button>
                                         </MinimalistPortfolioPortuguese>
                                         }
+                                        <Typography
+                                            sx={{
+                                                fontFamily: "JetBrains Mono, monospace",
+                                                fontSize: "1.6rem",
+                                                color: textColor,
+                                                alignSelf: "start",
+                                            }}
+                                        >
+                                           {switchLanguage === "en" ? <>Stock Management Site</> : <>Site de gerenciamento de estoque</>} 
+                                        </Typography>
 
                                         {switchLanguage === "en" ? (
                                             <PythonCrudEnglish textColor={textColor}>
@@ -670,7 +680,7 @@ export default function MainPage() {
                                                     sx={{
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
-                                                        color: "#9FCC2E",
+                                                        color: textColor,
                                                         mt: "1.2rem",
 
                                                     }}
@@ -686,7 +696,7 @@ export default function MainPage() {
                                                     sx={{
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
-                                                        color: "#9FCC2E",
+                                                        color: textColor,
                                                         mt: "1.2rem",
                                                     }}
                                                     onClick={() => handleRedirectTo("crud_python")}
@@ -700,7 +710,7 @@ export default function MainPage() {
                                             sx={{
                                                 fontFamily: "JetBrains Mono, monospace",
                                                 fontSize: "1.6rem",
-                                                color: "#9FCC2E",
+                                                color: textColor,
                                                 alignSelf: "start",
                                             }}
                                         >
@@ -713,7 +723,7 @@ export default function MainPage() {
                                                     sx={{
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
-                                                        color: "#9FCC2E",
+                                                        color: textColor,
                                                         mt: "1.2rem",
 
                                                     }}
@@ -729,7 +739,7 @@ export default function MainPage() {
                                                     sx={{
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
-                                                        color: "#9FCC2E",
+                                                        color: textColor,
                                                         mt: "1.2rem",
                                                     }}
                                                     onClick={() => handleRedirectTo("chrome_extension")}
