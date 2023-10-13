@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/minimalist_portfolio/static/css/main.c2ae8911.css",
-    "main.js": "/minimalist_portfolio/static/js/main.6fb06d52.js",
+    "main.css": "/minimalist_portfolio/static/css/main.5e3d7b4a.css",
+    "main.js": "/minimalist_portfolio/static/js/main.1622de9d.js",
     "static/js/787.00e01591.chunk.js": "/minimalist_portfolio/static/js/787.00e01591.chunk.js",
     "static/media/ff.jpg": "/minimalist_portfolio/static/media/ff.1d4bbf4c42f023097f94.jpg",
     "static/media/mona-loading-dark.gif": "/minimalist_portfolio/static/media/mona-loading-dark.a73a63d1c8ba93cb4382.gif",
     "index.html": "/minimalist_portfolio/index.html",
-    "main.c2ae8911.css.map": "/minimalist_portfolio/static/css/main.c2ae8911.css.map",
-    "main.6fb06d52.js.map": "/minimalist_portfolio/static/js/main.6fb06d52.js.map",
+    "main.5e3d7b4a.css.map": "/minimalist_portfolio/static/css/main.5e3d7b4a.css.map",
+    "main.1622de9d.js.map": "/minimalist_portfolio/static/js/main.1622de9d.js.map",
     "787.00e01591.chunk.js.map": "/minimalist_portfolio/static/js/787.00e01591.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2ae8911.css",
-    "static/js/main.6fb06d52.js"
+    "static/css/main.5e3d7b4a.css",
+    "static/js/main.1622de9d.js"
   ]
 }
