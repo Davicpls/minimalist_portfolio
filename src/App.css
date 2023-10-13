@@ -1,6 +1,6 @@
 .myPhoto {
   border-radius: 5%;
-  width: 100%;
+  width: 95%;
   height: 100%;
   color: transparent;
   aspect-ratio: 1 /1;
@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  letter-spacing: "0.10em" ;
 }
 
 * {
