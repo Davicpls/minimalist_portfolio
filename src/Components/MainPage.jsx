@@ -203,7 +203,7 @@ export default function MainPage() {
                                     width: "100%",
                                     height: "100%",
                                     justifyContent: "center",
-                                    minWidth: "25.625rem",
+                                    minWidth: "20.625rem",
                                 }}
                             >
                                 <StyledBoxRowToColumn theme={theme}>
@@ -629,25 +629,27 @@ export default function MainPage() {
                                                 alignSelf: "start",
                                             }}
                                         >
-                                            Essa página
+                                            {switchLanguage === "en" ? <> This page </> : <> Essa página </>}
                                         </Typography>
                                         {switchLanguage === "en" ? (
-                                            <MinimalistPortfolioEnglish>
+                                            <MinimalistPortfolioEnglish textColor={textColor}>
                                                 <Button
                                                     sx={{
                                                         fontFamily: "JetBrains Mono, monospace",
                                                         fontSize: "1.2rem",
+                                                        backgroundColor: "transparent",
                                                         color: textColor,
                                                         mt: "1.2rem",
+                                                        ml: "1.2rem"
 
                                                     }}
                                                     onClick={() => handleRedirectTo("minimalist_portfolio")}
-                                                    variant="contained"
+                                                    
                                                 >
                                                     Project Link
                                                 </Button>
                                             </MinimalistPortfolioEnglish>
-                                        ) : <MinimalistPortfolioPortuguese>
+                                        ) : <MinimalistPortfolioPortuguese textColor={textColor}>
                                             <Button
                                                 sx={{
                                                     fontFamily: "JetBrains Mono, monospace",
