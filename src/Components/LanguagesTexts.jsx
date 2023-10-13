@@ -85,7 +85,7 @@ export const MinimalistPortfolioPortuguese = ({ textColor, children }) => {
 export const MinimalistPortfolioEnglish = ({ textColor, children }) => {
     return (
         <Typography sx={{ fontFamily: 'JetBrains Mono, monospace', fontSize: "1.2rem", color: textColor, p: "0.6rem", letterSpacing: "0.10em", 
-        display: "flex", flexDirection: "column", textAlign: "justify"  }}>
+        display: "flex", flexDirection: "column", textAlign: "justify" }}>
             This Page - Portfolio page where I showcase my skills and personal projects.
             {children}
         </Typography>
