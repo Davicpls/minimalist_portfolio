@@ -593,7 +593,12 @@ export default function MainPage() {
                         sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                         secondaryAction={
                           <Box>
-                            <img decoding="async" alt="dynamo" src={dynamo} />
+                            <img
+                              className="dynamo"
+                              decoding="async"
+                              alt="dynamo"
+                              src={dynamo}
+                            />
                           </Box>
                         }
                       >
@@ -618,7 +623,12 @@ export default function MainPage() {
                         sx={{ p: "0", m: "0", boxSizing: "border-box" }}
                         secondaryAction={
                           <Box>
-                            <img decoding="async" alt="s3" src={s3} />
+                            <img
+                              className="s3"
+                              decoding="async"
+                              alt="s3"
+                              src={s3}
+                            />
                           </Box>
                         }
                       >
@@ -677,6 +687,9 @@ export default function MainPage() {
                             fontFamily: "JetBrains Mono, monospace",
                             fontSize: "1.2rem",
                             backgroundColor: "transparent",
+                            "&:hover": {
+                              backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            },
                             color: textColor,
                             mt: "1.4rem",
                             p: "0",
@@ -695,7 +708,9 @@ export default function MainPage() {
                           sx={{
                             fontFamily: "JetBrains Mono, monospace",
                             fontSize: "1.2rem",
-                            backgroundColor: "transparent",
+                            "&:hover": {
+                              backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            },
                             color: textColor,
                             mt: "1.4rem",
                             p: "0",
@@ -715,6 +730,7 @@ export default function MainPage() {
                         fontSize: "1.6rem",
                         color: textColor,
                         alignSelf: "start",
+                        
                       }}
                     >
                       {switchLanguage === "en" ? (
@@ -734,6 +750,9 @@ export default function MainPage() {
                             mt: "1.4rem",
                             p: "0",
                             letterSpacing: "0.10em",
+                            "&:hover": {
+                              backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            },
                           }}
                           onClick={() => handleRedirectTo("crud_python")}
                         >
@@ -748,6 +767,9 @@ export default function MainPage() {
                             fontSize: "1.2rem",
                             color: textColor,
                             mt: "1.4rem",
+                            "&:hover": {
+                              backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            },
                             p: "0",
                             letterSpacing: "0.10em",
                           }}
@@ -781,6 +803,9 @@ export default function MainPage() {
                             fontSize: "1.2rem",
                             color: textColor,
                             mt: "1.4rem",
+                            "&:hover": {
+                              backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            },
                             p: "0",
                             letterSpacing: "0.10em",
                           }}
@@ -797,6 +822,9 @@ export default function MainPage() {
                             fontSize: "1.2rem",
                             color: textColor,
                             mt: "1.4rem",
+                            "&:hover": {
+                              backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            },
                             p: "0",
                             letterSpacing: "0.10em",
                           }}
