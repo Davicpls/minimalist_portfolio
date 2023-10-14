@@ -34,14 +34,10 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import gitgif from "./Images/mona-loading-dark.gif";
 import { useTheme } from "@mui/material/styles";
 import {
-  AboutPortuguese,
-  AboutEnglish,
-  PythonCrudEnglish,
-  PythonCrudPortuguese,
-  ChromeTimerExtensionPortuguese,
-  ChromeTimerExtensionEnglish,
-  MinimalistPortfolioEnglish,
-  MinimalistPortfolioPortuguese,
+  About,
+  PythonCrud,
+  ChromeTimerExtension,
+  MinimalistPortfolio,
 } from "./LanguagesTexts";
 import { determinarAltura, myAgeToday } from "./Utilities";
 import {
@@ -400,11 +396,28 @@ export default function MainPage() {
                       {switchLanguage === "en" ? <> About </> : <> Sobre </>}
                     </Typography>
 
-                    {switchLanguage === "en" ? (
-                      <AboutEnglish myAge={myAge} textColor={textColor} />
-                    ) : (
-                      <AboutPortuguese myAge={myAge} textColor={textColor} />
-                    )}
+                    <About myAge={myAge} textColor={textColor}>
+                      {switchLanguage === "en" ? (
+                        <>
+                          My name is Davi Coelho and I am {myAge} years old.
+                          Started programming with Python in 2022. Pursuing
+                          Information Systems degree at PUC-MG University.
+                          Knowledgeable in Python, Javascript, HTML, CSS,
+                          React.js, and C#. Interned at BTG Pactual, where I
+                          worked with technologies such as:
+                        </>
+                      ) : (
+                        <>
+                          Olá, meu nome é Davi Coelho e tenho {myAge} anos.
+                          Iniciei a programação com Python em 2022. Cursando a
+                          graduação de Sistemas de Informação na Universidade
+                          PUC-MG.. Conhecimentos sólidos em Python, Javascript,
+                          React.js, HTML, CSS e C#. Estagiei no BTG Pactual,
+                          trabalhando com tecnologias como:
+                        </>
+                      )}
+                    </About>
+
                     <List>
                       <ListItem
                         sx={{ p: "0", m: "0", boxSizing: "border-box" }}
@@ -680,57 +693,48 @@ export default function MainPage() {
                         <> Essa página </>
                       )}
                     </Typography>
-                    {switchLanguage === "en" ? (
-                      <MinimalistPortfolioEnglish textColor={textColor}>
-                        <Button
-                          sx={{
-                            fontFamily: "JetBrains Mono, monospace",
-                            fontSize: "1.2rem",
-                            backgroundColor: "transparent",
-                            "&:hover": {
-                              backgroundColor: "rgba(255, 255, 255, 0.08)",
-                            },
-                            color: textColor,
-                            mt: "1.4rem",
-                            p: "0",
-                            letterSpacing: "0.10em",
-                          }}
-                          onClick={() =>
-                            handleRedirectTo("minimalist_portfolio")
-                          }
-                        >
-                          Project Link
-                        </Button>
-                      </MinimalistPortfolioEnglish>
-                    ) : (
-                      <MinimalistPortfolioPortuguese textColor={textColor}>
-                        <Button
-                          sx={{
-                            fontFamily: "JetBrains Mono, monospace",
-                            fontSize: "1.2rem",
-                            "&:hover": {
-                              backgroundColor: "rgba(255, 255, 255, 0.08)",
-                            },
-                            color: textColor,
-                            mt: "1.4rem",
-                            p: "0",
-                            letterSpacing: "0.10em",
-                          }}
-                          onClick={() =>
-                            handleRedirectTo("minimalist_portfolio")
-                          }
-                        >
-                          Project Link
-                        </Button>
-                      </MinimalistPortfolioPortuguese>
-                    )}
+
+                    <MinimalistPortfolio textColor={textColor}>
+                      {switchLanguage === "en" ? (
+                        <>
+                          This Page - Portfolio page where I showcase my skills
+                          and personal projects.
+                        </>
+                      ) : (
+                        <>
+                          Esta Página - Página Portfolio onde divulgo minhas
+                          habilidades e projetos pessoais.
+                        </>
+                      )}
+                      <Button
+                        sx={{
+                          fontFamily: "JetBrains Mono, monospace",
+                          fontSize: "1.2rem",
+                          backgroundColor: "transparent",
+                          "&:hover": {
+                            backgroundColor: "rgba(255, 255, 255, 0.08)",
+                          },
+                          color: textColor,
+                          mt: "1.4rem",
+                          p: "0",
+                          letterSpacing: "0.10em",
+                        }}
+                        onClick={() => handleRedirectTo("minimalist_portfolio")}
+                      >
+                        {switchLanguage === "en" ? (
+                          <>Project Link</>
+                        ) : (
+                          <>Link do Projeto</>
+                        )}
+                      </Button>
+                    </MinimalistPortfolio>
+
                     <Typography
                       sx={{
                         fontFamily: "JetBrains Mono, monospace",
                         fontSize: "1.6rem",
                         color: textColor,
                         alignSelf: "start",
-                        
                       }}
                     >
                       {switchLanguage === "en" ? (
@@ -740,45 +744,45 @@ export default function MainPage() {
                       )}
                     </Typography>
 
-                    {switchLanguage === "en" ? (
-                      <PythonCrudEnglish textColor={textColor}>
-                        <Button
-                          sx={{
-                            fontFamily: "JetBrains Mono, monospace",
-                            fontSize: "1.2rem",
-                            color: textColor,
-                            mt: "1.4rem",
-                            p: "0",
-                            letterSpacing: "0.10em",
-                            "&:hover": {
-                              backgroundColor: "rgba(255, 255, 255, 0.08)",
-                            },
-                          }}
-                          onClick={() => handleRedirectTo("crud_python")}
-                        >
-                          Project Link
-                        </Button>
-                      </PythonCrudEnglish>
-                    ) : (
-                      <PythonCrudPortuguese textColor={textColor}>
-                        <Button
-                          sx={{
-                            fontFamily: "JetBrains Mono, monospace",
-                            fontSize: "1.2rem",
-                            color: textColor,
-                            mt: "1.4rem",
-                            "&:hover": {
-                              backgroundColor: "rgba(255, 255, 255, 0.08)",
-                            },
-                            p: "0",
-                            letterSpacing: "0.10em",
-                          }}
-                          onClick={() => handleRedirectTo("crud_python")}
-                        >
-                          Project Link
-                        </Button>
-                      </PythonCrudPortuguese>
-                    )}
+                    <PythonCrud textColor={textColor}>
+                      {switchLanguage === "en" ? (
+                        <>
+                          Python Crud - A stock management project with a
+                          backend in Python and FastAPI, where the user can
+                          insert items with their respective prices, add balance
+                          to the account, purchase, edit, and delete items, as
+                          well as view all of this in tables.
+                        </>
+                      ) : (
+                        <>
+                          Python Crud - Um projeto de gerenciamento de estoque
+                          com backend em Python e FastAPI, onde o usuário pode
+                          inserir items com seus respectivos preços, adicionar
+                          saldo na conta, comprar, editar e deletar items, além
+                          de visualizar isso tudo em tabelas.
+                        </>
+                      )}
+                      <Button
+                        sx={{
+                          fontFamily: "JetBrains Mono, monospace",
+                          fontSize: "1.2rem",
+                          color: textColor,
+                          mt: "1.4rem",
+                          p: "0",
+                          letterSpacing: "0.10em",
+                          "&:hover": {
+                            backgroundColor: "rgba(255, 255, 255, 0.08)",
+                          },
+                        }}
+                        onClick={() => handleRedirectTo("crud_python")}
+                      >
+                        {switchLanguage === "en" ? (
+                          <>Project Link</>
+                        ) : (
+                          <>Link do Projeto</>
+                        )}
+                      </Button>
+                    </PythonCrud>
 
                     <Typography
                       sx={{
@@ -795,45 +799,48 @@ export default function MainPage() {
                       )}
                     </Typography>
 
-                    {switchLanguage === "en" ? (
-                      <ChromeTimerExtensionEnglish textColor={textColor}>
-                        <Button
-                          sx={{
-                            fontFamily: "JetBrains Mono, monospace",
-                            fontSize: "1.2rem",
-                            color: textColor,
-                            mt: "1.4rem",
-                            "&:hover": {
-                              backgroundColor: "rgba(255, 255, 255, 0.08)",
-                            },
-                            p: "0",
-                            letterSpacing: "0.10em",
-                          }}
-                          onClick={() => handleRedirectTo("chrome_extension")}
-                        >
-                          Project Link
-                        </Button>
-                      </ChromeTimerExtensionEnglish>
-                    ) : (
-                      <ChromeTimerExtensionPortuguese textColor={textColor}>
-                        <Button
-                          sx={{
-                            fontFamily: "JetBrains Mono, monospace",
-                            fontSize: "1.2rem",
-                            color: textColor,
-                            mt: "1.4rem",
-                            "&:hover": {
-                              backgroundColor: "rgba(255, 255, 255, 0.08)",
-                            },
-                            p: "0",
-                            letterSpacing: "0.10em",
-                          }}
-                          onClick={() => handleRedirectTo("chrome_extension")}
-                        >
-                          Project Link
-                        </Button>
-                      </ChromeTimerExtensionPortuguese>
-                    )}
+                    <ChromeTimerExtension textColor={textColor}>
+                      {switchLanguage === "en" ? (
+                        <>
+                          Customizable Focus Timer - a Google Chrome extension
+                          designed for those who crave flexibility in their
+                          focus sessions. Inspired by the Pomodoro Technique,
+                          the extension takes it a step further by allowing you
+                          to tailor your work and break durations to your unique
+                          needs.
+                        </>
+                      ) : (
+                        <>
+                          Temporizador de Foco Personalizável - uma extensão do
+                          Google Chrome projetada para quem deseja flexibilidade
+                          em suas sessões de foco. Inspirada na Técnica
+                          Pomodoro, ela permite que você ajuste as durações de
+                          trabalho, pausa e ciclos de acordo com suas
+                          necessidades únicas.
+                        </>
+                      )}
+                      <Button
+                        sx={{
+                          fontFamily: "JetBrains Mono, monospace",
+                          fontSize: "1.2rem",
+                          color: textColor,
+                          mt: "1.4rem",
+                          "&:hover": {
+                            backgroundColor: "rgba(255, 255, 255, 0.08)",
+                          },
+                          p: "0",
+                          letterSpacing: "0.10em",
+                        }}
+                        onClick={() => handleRedirectTo("chrome_extension")}
+                      >
+                        {switchLanguage === "en" ? (
+                          <>Project Link</>
+                        ) : (
+                          <>Link do Projeto</>
+                        )}
+                      </Button>
+                    </ChromeTimerExtension>
+
                     <Divider sx={{ backgroundColor: textColor }}></Divider>
                     {switchLanguage === "en" ? (
                       <Box sx={{ position: "relative" }}>
