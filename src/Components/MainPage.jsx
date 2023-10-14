@@ -818,7 +818,7 @@ export default function MainPage() {
                             letterSpacing: "0.10em",
                           }}
                         >
-                          © {actualYear} Davi Coelho — All rights reserved. v1.0
+                          © {actualYear} Davi Coelho — All rights reserved. v1.1
                         </Typography>
                         <Box className="gitGif">
                           <img
