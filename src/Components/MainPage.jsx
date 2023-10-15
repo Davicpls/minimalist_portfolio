@@ -88,6 +88,15 @@ export default function MainPage() {
       ? theme.palette.secondary.main
       : theme.palette.primary.main;
 
+  const projectLinkButtonStyle = {
+    fontFamily: "JetBrains Mono, monospace",
+    fontSize: "1.2rem",
+    color: textColor,
+    marginTop: "1.4rem",
+    padding: "0",
+    letterSpacing: "0.10em",
+  };
+
   const [switchLanguage, setSwitchLanguage] = useState("en");
 
   const handleSwitchLanguage = (language) => {
@@ -707,17 +716,14 @@ export default function MainPage() {
                         </>
                       )}
                       <Button
+                        style={projectLinkButtonStyle}
                         sx={{
-                          fontFamily: "JetBrains Mono, monospace",
-                          fontSize: "1.2rem",
-                          backgroundColor: "transparent",
                           "&:hover": {
-                            backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            backgroundColor:
+                              textColor === theme.palette.secondary.main
+                                ? "rgba(255, 255, 255, 0.08)"
+                                : "rgba(0, 0, 0, 0.08)",
                           },
-                          color: textColor,
-                          mt: "1.4rem",
-                          p: "0",
-                          letterSpacing: "0.10em",
                         }}
                         onClick={() => handleRedirectTo("minimalist_portfolio")}
                       >
@@ -763,15 +769,13 @@ export default function MainPage() {
                         </>
                       )}
                       <Button
+                        style={projectLinkButtonStyle}
                         sx={{
-                          fontFamily: "JetBrains Mono, monospace",
-                          fontSize: "1.2rem",
-                          color: textColor,
-                          mt: "1.4rem",
-                          p: "0",
-                          letterSpacing: "0.10em",
                           "&:hover": {
-                            backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            backgroundColor:
+                              textColor === theme.palette.secondary.main
+                                ? "rgba(255, 255, 255, 0.08)"
+                                : "rgba(0, 0, 0, 0.08)",
                           },
                         }}
                         onClick={() => handleRedirectTo("crud_python")}
@@ -820,16 +824,14 @@ export default function MainPage() {
                         </>
                       )}
                       <Button
+                        style={projectLinkButtonStyle}
                         sx={{
-                          fontFamily: "JetBrains Mono, monospace",
-                          fontSize: "1.2rem",
-                          color: textColor,
-                          mt: "1.4rem",
                           "&:hover": {
-                            backgroundColor: "rgba(255, 255, 255, 0.08)",
+                            backgroundColor:
+                              textColor === theme.palette.secondary.main
+                                ? "rgba(255, 255, 255, 0.08)"
+                                : "rgba(0, 0, 0, 0.08)",
                           },
-                          p: "0",
-                          letterSpacing: "0.10em",
                         }}
                         onClick={() => handleRedirectTo("chrome_extension")}
                       >
