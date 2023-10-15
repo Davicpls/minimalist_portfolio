@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/minimalist_portfolio/static/css/main.3352f9b1.css",
-    "main.js": "/minimalist_portfolio/static/js/main.8e2fbb28.js",
+    "main.js": "/minimalist_portfolio/static/js/main.e57b3fd5.js",
     "static/js/787.00e01591.chunk.js": "/minimalist_portfolio/static/js/787.00e01591.chunk.js",
     "static/media/ff.jpg": "/minimalist_portfolio/static/media/ff.1d4bbf4c42f023097f94.jpg",
     "static/media/mona-loading-dark.gif": "/minimalist_portfolio/static/media/mona-loading-dark.a73a63d1c8ba93cb4382.gif",
     "index.html": "/minimalist_portfolio/index.html",
     "main.3352f9b1.css.map": "/minimalist_portfolio/static/css/main.3352f9b1.css.map",
-    "main.8e2fbb28.js.map": "/minimalist_portfolio/static/js/main.8e2fbb28.js.map",
+    "main.e57b3fd5.js.map": "/minimalist_portfolio/static/js/main.e57b3fd5.js.map",
     "787.00e01591.chunk.js.map": "/minimalist_portfolio/static/js/787.00e01591.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3352f9b1.css",
-    "static/js/main.8e2fbb28.js"
+    "static/js/main.e57b3fd5.js"
   ]
 }
