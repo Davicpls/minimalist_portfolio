@@ -343,6 +343,7 @@ export default function MainPage() {
                       }}
                     >
                       <IconButton
+                        id={switchLanguage === "en" ? "English" : "Inglês"}
                         onClick={() => handleSwitchLanguage("en")}
                         sx={{
                           color: textColor,
@@ -354,6 +355,9 @@ export default function MainPage() {
                         EN
                       </IconButton>
                       <IconButton
+                        id={
+                          switchLanguage === "en" ? "Portuguese" : "Português"
+                        }
                         onClick={() => handleSwitchLanguage("pt")}
                         sx={{
                           color: textColor,
@@ -367,6 +371,11 @@ export default function MainPage() {
                       <IconButton onClick={() => handleSwitchTheme()}>
                         {switchTheme === theme.palette.primary.main ? (
                           <LightModeIcon
+                            id={
+                              switchLanguage === "en"
+                                ? "Lightmode"
+                                : "Modo claro"
+                            }
                             sx={{
                               color: theme.palette.secondary.main,
                               fontSize: "35px",
@@ -374,6 +383,11 @@ export default function MainPage() {
                           />
                         ) : (
                           <DarkModeIcon
+                            id={
+                              switchLanguage === "en"
+                                ? "Darkmode"
+                                : "Modo escuro"
+                            }
                             sx={{
                               color: theme.palette.primary.main,
                               fontSize: "30px",
@@ -383,6 +397,7 @@ export default function MainPage() {
                       </IconButton>
                     </Box>
                     <Typography
+                      id="Portfolio"
                       sx={{
                         fontFamily: "JetBrains Mono, monospace",
                         fontSize: "2rem",
@@ -394,6 +409,7 @@ export default function MainPage() {
                       Portfolio
                     </Typography>
                     <Typography
+                      id={switchLanguage === "en" ? "About" : "Sobre"}
                       sx={{
                         fontFamily: "JetBrains Mono, monospace",
                         fontSize: "2rem",
@@ -405,7 +421,11 @@ export default function MainPage() {
                       {switchLanguage === "en" ? <> About </> : <> Sobre </>}
                     </Typography>
 
-                    <About myAge={myAge} textColor={textColor}>
+                    <About
+                      switchLanguage={switchLanguage}
+                      myAge={myAge}
+                      textColor={textColor}
+                    >
                       {switchLanguage === "en" ? (
                         <>
                           My name is Davi Coelho and I am {myAge} years old.
@@ -446,6 +466,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed Javascript"
+                              : "Javascript listado"
+                          }
                           primary="Javascript"
                           sx={{
                             color: textColor,
@@ -471,6 +496,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed React.js"
+                              : "React.js listado"
+                          }
                           primary="React.js"
                           sx={{
                             color: textColor,
@@ -496,6 +526,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed Python"
+                              : "Python listado"
+                          }
                           primary="Python - FastAPI"
                           sx={{
                             color: textColor,
@@ -521,6 +556,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed PostgreSQL"
+                              : "PostgreSQL listado"
+                          }
                           primary="PostgreSQL"
                           sx={{
                             color: textColor,
@@ -546,6 +586,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed Docker"
+                              : "Docker listado"
+                          }
                           primary="Docker"
                           sx={{
                             color: textColor,
@@ -575,6 +620,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed Kubernetes"
+                              : "Kubernetes listado"
+                          }
                           primary="Kubernetes"
                           sx={{
                             color: textColor,
@@ -600,6 +650,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed Azure Devops"
+                              : "Azure Devops listado"
+                          }
                           primary="Azure Devops"
                           sx={{
                             color: textColor,
@@ -630,6 +685,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed AWS DynamoDB"
+                              : "AWS DynamoDB listado"
+                          }
                           primary="AWS DynamoDB"
                           sx={{
                             color: textColor,
@@ -660,6 +720,11 @@ export default function MainPage() {
                           />
                         </ListItemIcon>
                         <ListItemText
+                          id={
+                            switchLanguage === "en"
+                              ? "Listed AWS S3"
+                              : "AWS S3 listado"
+                          }
                           primary="AWS S3"
                           sx={{
                             color: textColor,
@@ -673,6 +738,11 @@ export default function MainPage() {
                       </ListItem>
                     </List>
                     <Typography
+                      id={
+                        switchLanguage === "en"
+                          ? "Personal projects"
+                          : "Projetos pessoais"
+                      }
                       sx={{
                         fontFamily: "JetBrains Mono, monospace",
                         fontSize: "1.8rem",
@@ -689,6 +759,11 @@ export default function MainPage() {
                     </Typography>
 
                     <Typography
+                      id={
+                        switchLanguage === "en"
+                          ? "Personal projects"
+                          : "Projetos pessoais"
+                      }
                       sx={{
                         fontFamily: "JetBrains Mono, monospace",
                         fontSize: "1.6rem",
@@ -703,7 +778,7 @@ export default function MainPage() {
                       )}
                     </Typography>
 
-                    <MinimalistPortfolio textColor={textColor}>
+                    <MinimalistPortfolio switchLanguage={switchLanguage} textColor={textColor}>
                       {switchLanguage === "en" ? (
                         <>
                           This Page - Portfolio page where I showcase my skills
@@ -750,7 +825,7 @@ export default function MainPage() {
                       )}
                     </Typography>
 
-                    <PythonCrud textColor={textColor}>
+                    <PythonCrud switchLanguage={switchLanguage} textColor={textColor}>
                       {switchLanguage === "en" ? (
                         <>
                           Python Crud - A stock management project with a
@@ -803,7 +878,7 @@ export default function MainPage() {
                       )}
                     </Typography>
 
-                    <ChromeTimerExtension textColor={textColor}>
+                    <ChromeTimerExtension switchLanguage={switchLanguage} textColor={textColor}>
                       {switchLanguage === "en" ? (
                         <>
                           Customizable Focus Timer - a Google Chrome extension

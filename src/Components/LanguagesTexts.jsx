@@ -1,8 +1,9 @@
 import { Typography } from "@mui/material";
 
-export const About = ({ textColor, children }) => {
+export const About = ({ textColor, children, switchLanguage }) => {
   return (
     <Typography
+      id={switchLanguage === "en" ? "About me text" : "Texto sobre mim"}
       sx={{
         textAlign: "justify",
         fontFamily: "JetBrains Mono, monospace",
@@ -18,9 +19,12 @@ export const About = ({ textColor, children }) => {
   );
 };
 
-export const PythonCrud = ({ textColor, children }) => {
+export const PythonCrud = ({ textColor, children, switchLanguage }) => {
   return (
     <Typography
+      id={
+        switchLanguage === "en" ? "Python Crud Project" : "Projeto Crud Python"
+      }
       sx={{
         fontFamily: "JetBrains Mono, monospace",
         fontSize: "1.2rem",
@@ -37,9 +41,18 @@ export const PythonCrud = ({ textColor, children }) => {
   );
 };
 
-export const ChromeTimerExtension = ({ textColor, children }) => {
+export const ChromeTimerExtension = ({
+  textColor,
+  children,
+  switchLanguage,
+}) => {
   return (
     <Typography
+      id={
+        switchLanguage === "en"
+          ? "Chrome Extension Project"
+          : "Projeto de Extensão do Chrome"
+      }
       sx={{
         fontFamily: "JetBrains Mono, monospace",
         fontSize: "1.2rem",
@@ -56,9 +69,10 @@ export const ChromeTimerExtension = ({ textColor, children }) => {
   );
 };
 
-export const MinimalistPortfolio = ({ textColor, children }) => {
+export const MinimalistPortfolio = ({ textColor, children, switchLanguage }) => {
   return (
     <Typography
+    id={switchLanguage === "en" ? "Portfolio Project" : "Projeto do Portfolio"}
       sx={{
         fontFamily: "JetBrains Mono, monospace",
         fontSize: "1.2rem",
